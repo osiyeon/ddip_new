@@ -24,7 +24,6 @@ module.exports = {
       },
       gender: {
         type: Sequelize.ENUM([Woman, Man]),
-        unique: true,
         allowNull: false
       },
       tel_user: {

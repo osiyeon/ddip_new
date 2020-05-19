@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     gender: {
       type: DataTypes.ENUM([Woman, Man]),
-      unique: true,
       allowNull: false
     },
     tel_user: {

@@ -1,0 +1,35 @@
+type Query {
+    getUser: [User!]!
+}
+type Mutation {
+    addUser(
+        user_name: String!,
+        password: String!,
+        email: String!,
+        gender: genderselect!,
+        tel_user: String!,
+        lat_user: Float!,
+        long_user: Float!,
+        address: String!,
+        tel_certify: Boolean!,
+        balance: Int!,
+        account: Int!
+    ): User!
+}
+type User {
+    user_name: String!,
+    password: String!,
+    email: String!,
+    gender: genderselect!,
+    tel_user: String!,
+    lat_user: Float!,
+    long_user: Float!,
+    address: String!,
+    tel_certify: Boolean!,
+    balance: Int!,
+    account: Int!
+}
+enum genderselect{
+    Man
+    Woman
+}
