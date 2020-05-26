@@ -14,7 +14,7 @@ type Mutation {
         tel_certify: Boolean!,
         balance: Int!,
         account: Int!
-    ): User!
+    ): addUserResponse!
 }
 type User {
     user_name: String!,
@@ -32,4 +32,10 @@ type User {
 enum genderselect{
     Man
     Woman
+}
+
+type addUserResponse{
+    ok:Boolean!
+    token:String
+    user: User!
 }
