@@ -22,12 +22,12 @@ const resolvers = {
                 tel_certify,
                 balance,
                 account
-            }).save();
+            });
             const token = createJWT(newUser.id);
             return {
                 ok:true,
                 token,
-                newUser,
+                user:newUser
             };
         }
     }
