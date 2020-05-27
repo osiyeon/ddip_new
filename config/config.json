@@ -1,16 +1,16 @@
 {
   "development": {
     "username": "postgres",
-    "password": "password",
-    "database": "ddip",
+    "password": "ocean0313",
+    "database": "ddiptest",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
   },
   "test": {
     "username": "postgres",
-    "password": "password",
-    "database": "ddip",
+    "password": "ocean0313",
+    "database": "ddiptest",
     "host": "127.0.0.1",
     "dialect": "postgres",
     "operatorsAliases": false
