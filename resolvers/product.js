@@ -4,7 +4,12 @@ const createJWT = require( "../middleware/createJWT");
 const resolvers = {
     Query: {
         async allProduct(root, {args}, {models}) {
-            return models.product.findAll()
+            try {
+                return models.product.findAll()
+            }catch(err){
+                console.log(err);
+                return false;
+            }
         }
     },
     Mutation: {
