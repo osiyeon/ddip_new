@@ -7,8 +7,4 @@ const createJWT = (userId) => {
     return token;
 };
 
-<<<<<<< HEAD
 module.exports = createJWT;
-=======
-module.exports = createJWT;
->>>>>>> origin/master
