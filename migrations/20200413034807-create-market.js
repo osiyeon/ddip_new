@@ -14,17 +14,14 @@ module.exports = {
       market_name: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
       },
       address: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
       },
       tel_market: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true
       },
       deli_market: {
         type: Sequelize.ENUM([Delivery, Direct]),

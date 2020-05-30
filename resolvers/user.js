@@ -1,11 +1,13 @@
-const createJWT = require( "../middleware/createJWT");
-
 const models = require('../models');
+const createJWT = require( "../middleware/createJWT");
 
 const resolvers = {
     Query: {
-        async getUser(root, {args}, {models}) {
+        async allUser(root, {args}, {models}) {
             return models.user.findAll()
+        },
+        async getUser(root, {user_name}, {models}){
+            return models.user.findAll({where: {user_name}, raw:true});
         }
     },
     Mutation: {
@@ -22,14 +24,19 @@ const resolvers = {
                 tel_certify,
                 balance,
                 account
-            }).save();
+            });
             const token = createJWT(newUser.id);
             return {
                 ok:true,
                 token,
-                newUser,
+                user:newUser
             };
-        }
+        },
+        async deleteUser (root, {user_name, password},{models}) {
+            const delUser = await models.user.destroy({
+                where: {user_name, password}
+            });
+        },
     }
 };
 

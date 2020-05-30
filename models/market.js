@@ -6,17 +6,14 @@ module.exports = (sequelize, DataTypes) => {
     market_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
     },
     address: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
     },
     tel_market: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
     },
     deli_market: {
       type: DataTypes.ENUM([Delivery, Direct]),

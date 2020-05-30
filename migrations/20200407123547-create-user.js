@@ -28,7 +28,6 @@ module.exports = {
       },
       tel_user: {
         type: Sequelize.STRING,
-        unique: true,
         allowNull: false
       },
       lat_user: {
@@ -41,7 +40,6 @@ module.exports = {
       },
       address: {
         type: Sequelize.STRING,
-        unique: true,
         allowNull: false
       },
       tel_certify: {
@@ -54,7 +52,6 @@ module.exports = {
       },
       account: {
         type: Sequelize.INTEGER,
-        unique: true,
         allowNull: false
       },
       createdAt: {

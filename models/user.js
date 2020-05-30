@@ -22,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     tel_user: {
       type: DataTypes.STRING,
-      unique: true,
       allowNull: false
     },
     lat_user: {
@@ -35,7 +34,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     address: {
       type: DataTypes.STRING,
-      unique: true,
       allowNull: false
     },
     tel_certify: {
@@ -48,7 +46,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     account: {
       type: DataTypes.INTEGER,
-      unique: true,
       allowNull: false
     }
   });

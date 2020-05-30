@@ -1,0 +1,40 @@
+type Query {
+    getUser(user_name: String) : [User]
+    allUser: [User]
+    allMarket: [Market]
+    allProduct: [Product]
+}
+type Mutation {
+    addUser(
+        user_name: String,
+        password: String,
+        email: String,
+        gender: genderselect,
+        tel_user: String,
+        lat_user: Float,
+        long_user: Float,
+        address: String,
+        tel_certify: Boolean,
+        balance: Int,
+        account: Int
+    ): User,
+    deleteUser(
+        user_name: String,
+        password: String
+    ): User,
+    addMarket(
+        market_name: String,
+        address: String,
+        tel_market: String,
+        deli_market: deliverselect,
+    ): Market,
+    addProduct(
+        product_name: String,
+        product_quantity: Int,
+        product_price: Int,
+        product_category: String,
+        product_description: String,
+        product_img:JSONB,
+        product_onlyWoman:iswoman
+    ): Product
+}
