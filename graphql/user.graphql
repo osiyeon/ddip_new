@@ -3,6 +3,7 @@ enum genderselect{
     Woman
 }
 type User {
+    id : Int,
     user_name: String,
     password: String,
     email: String,

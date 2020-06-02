@@ -1,6 +1,6 @@
 'use strict';
-const Yes = "Woman's item";
-const No = "Available to anyone";
+const Yes = "Yes";
+const No = "No";
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('products', {

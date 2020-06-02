@@ -1,6 +1,6 @@
 'use strict';
 const Delivery="Delivery"
-const Direct = "Direct Receipt"
+const Direct = "Direct"
 
 module.exports = {
   up: (queryInterface, Sequelize) => {

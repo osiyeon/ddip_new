@@ -1,6 +1,6 @@
 'use strict';
 const Delivery="Delivery"
-const Direct = "Direct Receipt"
+const Direct = "Direct"
 module.exports = (sequelize, DataTypes) => {
   const market = sequelize.define('market', {
     market_name: {
