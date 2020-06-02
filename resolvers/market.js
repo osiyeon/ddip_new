@@ -13,6 +13,14 @@ const resolvers = {
         }
     },
     Mutation: {
+        async addMarket (root, {market_name, address, tel_market, deli_market}, {models}) {
+            try {
+                return models.market.create ({market_name, address, tel_market, deli_market})
+            }catch(err){
+                console.log(err);
+                return false;
+            }
+        }
     }
 };
 

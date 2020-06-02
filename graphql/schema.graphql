@@ -3,6 +3,7 @@ type Query {
     allUser: [User]
     allMarket: [Market]
     allProduct: [Product]
+    marketproducts(marketID: Int) : [Product]
 }
 type Mutation {
     addUser(
@@ -35,6 +36,10 @@ type Mutation {
         product_category: String,
         product_description: String,
         product_img:JSONB,
-        product_onlyWoman:iswoman
-    ): Product
+        product_onlyWoman:iswoman,
+        marketID: Int
+    ): Product,
+    productsOFmarket(
+        market_name: String
+    ):Product
 }
