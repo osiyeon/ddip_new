@@ -1,50 +1,34 @@
-const models = require('../models');
-const createJWT = require( "../middleware/createJWT");
+const models = require('../models')
+const createJWT = require( '../middleware/createJWT')
+const privateResolver = require('./privateResolver')
 
 const resolvers = {
     Query: {
-        async allUser(root, {args}, {models}) {
+        allUser(root, args, {models}) {
             try {
                 return models.user.findAll()
-            }catch(err){
+            } catch(err){
                 console.log(err);
                 return false;
             }
         },
-        async getUser(root, {user_name}, {models}){
-            try {
-                return models.user.findAll({where: {user_name}, raw: true});
-            }catch(err){
-                console.log(err);
-                return false;
+        getUser: async(root, args, {models}) => {
+            const { req: { user } } = models;
+            return {
+                user
             }
         }
     },
     Mutation: {
-        async addUser (root, {user_name, password, email, gender, tel_user, lat_user, long_user, address, tel_certify, balance, account}, {models}) {
-            try {
-                const newUser = await models.user.create({
-                    user_name,
-                    password,
-                    email,
-                    gender,
-                    tel_user,
-                    lat_user,
-                    long_user,
-                    address,
-                    tel_certify,
-                    balance,
-                    account
-                });
-                const token = createJWT(newUser.id);
-                return {
-                    ok: true,
-                    token,
-                    user: newUser
-                };
-            } catch (err) {
-                console.log(err);
-                return false;
+        addUser: async (root, {user_name, password, email, gender, tel_user, lat_user, long_user, address, tel_certify, balance, account}, {models}) => {
+            const newUser = await models.user.create({
+                user_name, password, email, gender, tel_user, lat_user, long_user, address, tel_certify, balance, account
+            });
+            const token = createJWT(newUser.id);
+            return {
+                ok: true,
+                error: null,
+                token: token
             }
         },
         async deleteUser (root, {user_name, password},{models}) {
@@ -52,11 +36,15 @@ const resolvers = {
                 const delUser = await models.user.destroy({
                     where: {user_name, password}
                 });
-            } catch (err){
+                return{
+                    ok: true,
+                    error: null
+                }
+            } catch (err) {
                 console.log(err);
                 return false;
             }
-        },
+        }
     }
 };
 

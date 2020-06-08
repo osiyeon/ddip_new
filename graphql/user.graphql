@@ -1,8 +1,5 @@
-enum genderselect{
-    Man
-    Woman
-}
 type User {
+    id: Int,
     user_name: String,
     password: String,
     email: String,
@@ -16,7 +13,11 @@ type User {
     account: Int
 }
 type addUserResponse{
-    ok:Boolean!
-    token:String
-    newUser: User!
+    ok: Boolean
+    error: String
+    token : String
+}
+enum genderselect{
+    Man
+    Woman
 }

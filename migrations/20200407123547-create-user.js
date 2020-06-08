@@ -11,15 +11,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_name: {
-        type: Sequelize.STRING(27),
+        type: Sequelize.STRING,
         allowNull: false
       },
       password: {
-        type: Sequelize.STRING(20),
+        type: Sequelize.STRING,
         allowNull: false
       },
       email: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING,
         allowNull: false
       },
       gender: {

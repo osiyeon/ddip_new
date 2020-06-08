@@ -5,15 +5,15 @@ const Man = "Man";
 module.exports = (sequelize, DataTypes) => {
   const user = sequelize.define('user', {
     user_name: {
-      type: DataTypes.STRING(27),
+      type: DataTypes.STRING,
       allowNull: false
     },
     password: {
-      type: DataTypes.STRING(20),
+      type: DataTypes.STRING,
       allowNull: false
     },
     email: {
-      type: DataTypes.STRING(45),
+      type: DataTypes.STRING,
       allowNull: false
     },
     gender: {

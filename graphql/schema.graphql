@@ -1,5 +1,5 @@
 type Query {
-    getUser(user_name: String) : [User]
+    getUser: User
     allUser: [User]
     allMarket: [Market]
     allProduct: [Product]
@@ -17,11 +17,11 @@ type Mutation {
         tel_certify: Boolean,
         balance: Int,
         account: Int
-    ): User,
+    ): addUserResponse,
     deleteUser(
         user_name: String,
         password: String
-    ): User,
+    ): addUserResponse,
     addMarket(
         market_name: String,
         address: String,
