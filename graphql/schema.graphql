@@ -23,6 +23,13 @@ type Mutation {
         user_name: String,
         password: String
     ): User,
+    updateUser(
+            user_name: String,
+            password: String,
+            email: String,
+            tel_user: String,
+            account: Int
+            ): [User!]!,
     addMarket(
         market_name: String,
         address: String,

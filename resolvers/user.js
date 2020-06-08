@@ -57,6 +57,9 @@ const resolvers = {
                 return false;
             }
         },
+        async updateUser (root, {user_name,password,email,tel_user,account}, {models}) {
+            return models.user.update({password:password,email:email,tel_user:tel_user,account:account},{where: {user_name:user_name}});
+        },
     }
 };
 
